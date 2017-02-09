@@ -17,11 +17,11 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-              <li>
+    <li>
     <%= link_to carts_path do  %>
-       购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
     <% end %>
- </li>
+    </li>
 
 
               <% if !current_user %>
@@ -44,9 +44,9 @@
                                                 <% end %>
 
 
-                                                <li>
-                                                               <%= link_to("个人订单列表", account_orders_path ) %>
-                                                             </li>
+        <li>
+        <%= link_to("个人订单列表", account_orders_path ) %>
+        </li>
 
                                   <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
 
