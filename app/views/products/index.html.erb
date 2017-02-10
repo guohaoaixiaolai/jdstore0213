@@ -1,3 +1,14 @@
+
+<div class= "search">
+  <%= search_form_for @search do |f| %>
+    <%= f.label :title_cont %>
+    <%= f.search_field :title_cont %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<br>
+
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3">
@@ -11,4 +22,19 @@
       <%= product.title %> ￥ <%= product.price %>
     </div>
   <% end %>
+</div>
+
+
+
+<div class="animation-wrapper">
+  <div class="particle particle-1"></div>
+  <div class="particle particle-2"></div>
+  <div class="particle particle-3"></div>
+  <div class="particle particle-4"></div>
+</div>
+
+<div class="page-wrapper">
+  <h1>充满力量</h1>
+  <h2>充满希望</h2>
+  <h3>充满光芒</h3> 
 </div>
