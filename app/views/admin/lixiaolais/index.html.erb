@@ -1,0 +1,42 @@
+<h2> lixiaolai List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产品", new_admin_lixiaolai_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th width="220">lixiaolai Pic</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lixiaolais.each do |lixiaolai| %>
+      <tr>
+        <td>
+          <%= lixiaolai.id %>
+        </td>
+        <td>
+          <%= link_to lixiaolai_path(lixiaolai) do %>
+            <% if lixiaolai.image.present? %>
+              <%= image_tag(lixiaolai.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= lixiaolai.title %>
+        </td>
+        <td>
+          <%= lixiaolai.price %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_lixiaolai_path(lixiaolai)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
